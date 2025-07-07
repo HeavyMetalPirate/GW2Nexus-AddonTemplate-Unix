@@ -3,25 +3,6 @@ cmake_minimum_required(VERSION 3.28)
 project(nexus_addon)
 set(CMAKE_CXX_STANDARD 20)
 
-if(UNIX)
-    set(CMAKE_SYSTEM_NAME Windows)
-
-    # Set compiler to mingw-w64
-    set(TOOLCHAIN_PREFIX x86_64-w64-mingw32)
-    set(CMAKE_C_COMPILER /usr/bin/${TOOLCHAIN_PREFIX}-gcc)
-    set(CMAKE_CXX_COMPILER /usr/bin/${TOOLCHAIN_PREFIX}-g++)
-    set(CMAKE_RC_COMPILER /usr/bin/${TOOLCHAIN_PREFIX}-windres)
-
-    # target environment on the build host system
-    set(CMAKE_FIND_ROOT_PATH /usr/${TOOLCHAIN_PREFIX})
-
-    # modify default behavior of FIND_XXX() commands
-    set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
-    set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
-    set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
-
-endif ()
-
 # Set output name via parameter, default to clion_demo
 set(ADDON_OUTPUT_NAME "clion_demo" CACHE STRING "Name of the output DLL/library (without extension)")
 
@@ -48,13 +29,7 @@ set(IMGUI_SOURCES
 set(RC_FILE
         resources/resources.rc
 )
-if(UNIX)
-    set(CMAKE_RC_COMPILER_INIT windres)
-    enable_language(RC)
-    set(CMAKE_RC_COMPILE_OBJECT
-            "<CMAKE_RC_COMPILER> <FLAGS> -O coff <DEFINES> -i <SOURCE> -o <OBJECT>"
-    )
-endif()
+enable_language(RC)
 
 add_library(${ADDON_OUTPUT_NAME} SHARED
     ${SRC_FILES}
