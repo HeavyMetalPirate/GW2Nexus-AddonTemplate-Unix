@@ -5,6 +5,10 @@ set(CMAKE_RC_COMPILER llvm-rc)
 set(CMAKE_AR llvm-lib)
 set(CMAKE_LINKER lld-link)
 
+# Disable CMake's default compiler checks because we are having maximum faith here
+set(CMAKE_C_COMPILER_WORKS TRUE CACHE BOOL "Force C compiler to work" FORCE)
+set(CMAKE_CXX_COMPILER_WORKS TRUE CACHE BOOL "Force CXX compiler to work" FORCE)
+
 set(XWIN_SYSROOT
         /opt/xwin/xwin-0.6.6-x86_64-unknown-linux-musl/redist
 )
