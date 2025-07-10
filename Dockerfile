@@ -1,17 +1,18 @@
-FROM fedora:43 AS builder
-RUN dnf install -y \
+FROM ubuntu:24.04 AS builder
+RUN apt update && apt install -y \
     clang \
     clang-tools-extra \
     lld \
     llvm \
     cmake \
     ninja-build \
-    wget \
-    && dnf clean all
+    wget
 
-RUN command -v lld-link
-RUN command -v llvm-rc
-RUN command -v clang-cl
+# Verify installation of tools
+RUN which clang-cl
+RUN which lld-link
+RUN which llvm-lib
+RUN which conan
 
 # xwin
 ENV XWIN_VERSION=0.6.6

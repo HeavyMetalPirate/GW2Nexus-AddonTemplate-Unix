@@ -1,4 +1,3 @@
-
 #include <locale>
 #include "Globals.h"
 #include "service/AddonLoad.h"
