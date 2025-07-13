@@ -1,7 +1,3 @@
-//
-// Created by patrick on 04.07.25.
-//
-
 #ifndef ADDONLOAD_H
 #define ADDONLOAD_H
 

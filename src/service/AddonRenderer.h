@@ -1,7 +1,3 @@
-//
-// Created by patrick on 04.07.25.
-//
-
 #ifndef ADDONRENDERER_H
 #define ADDONRENDERER_H
 

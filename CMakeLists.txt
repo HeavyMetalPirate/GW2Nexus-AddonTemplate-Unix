@@ -6,12 +6,17 @@ set(CMAKE_CXX_STANDARD 20)
 find_package(rcgg-nexus-api)
 find_package(rcgg-mumble-api)
 find_package(imgui)
+find_package(nlohmann_json)
 
 # Set output name via parameter, default to clion_demo
 set(ADDON_OUTPUT_NAME "clion_demo" CACHE STRING "Name of the output DLL/library (without extension)")
 
 # Gather all sources and headers automatically
-file(GLOB_RECURSE SRC_FILES CONFIGURE_DEPENDS src/*.cpp src/*.h resources/resources.h)
+file(GLOB_RECURSE SRC_FILES CONFIGURE_DEPENDS
+        src/*.cpp
+        src/*.h
+        resources/resources.h
+)
 
 # Resources
 set(RC_FILE
@@ -39,4 +44,5 @@ target_link_libraries(${ADDON_OUTPUT_NAME}
             rcgg-nexus-api::rcgg-nexus-api
             rcgg-mumble-api::rcgg-mumble-api
             imgui::imgui
+            nlohmann_json::nlohmann_json
 )

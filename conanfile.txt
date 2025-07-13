@@ -2,6 +2,7 @@
 rcgg-nexus-api/v6.1
 rcgg-mumble-api/latest
 imgui/1.80
+nlohmann_json/3.12.0
 
 [generators]
 CMakeDeps
