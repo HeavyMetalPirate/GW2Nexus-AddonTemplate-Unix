@@ -73,7 +73,9 @@ For further information on how to use the Nexus API, please refer to the Nexus d
 # Building the addon
 To build the addon, you can use the CLion build system. Make sure to select the correct CMake profile (either `conan-release` or `conan-debug`) depending on your needs.
 
-An optional Dockerimage is also provided to build the addon in a clean environment or a CD/CI pipeline.
+An optional Dockerimage is also provided to build the addon in a clean environment or a CD/CI pipeline. An easy way to build the addon using
+Docker is to run either `build-docker.sh` or `build-podman.sh` depending on your container runtime of choice. The outputs will go to the `out/` directory.
+It will contain both the release and debug build.
 
 # Final words
 Make sure to edit this README to describe your addon and its features before releasing the addon.
