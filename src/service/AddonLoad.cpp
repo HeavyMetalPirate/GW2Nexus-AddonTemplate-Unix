@@ -1,6 +1,7 @@
 #include "AddonLoad.h"
 
 #include "AddonRenderer.h"
+#include "../Settings.h"
 
 namespace Addon {
     void Load(AddonAPI* aApi) {
@@ -14,6 +15,9 @@ namespace Addon {
         NexusLink = static_cast<NexusLinkData*>(APIDefs->DataLink.Get("DL_NEXUS_LINK"));
         MumbleLink = static_cast<Mumble::Data*>(APIDefs->DataLink.Get("DL_MUMBLE_LINK"));
 
+        // Load Settings
+        Settings::Load();
+
         // Register Renderers
         APIDefs->Renderer.Register(ERenderType_OptionsRender, Renderer::RenderOptions);
         APIDefs->Renderer.Register(ERenderType_PreRender, Renderer::PreRender);
@@ -24,6 +28,9 @@ namespace Addon {
     }
 
     void Unload() {
+        // Store Settings
+        Settings::Save();
+
         // Unregister Renderers
         APIDefs->Renderer.Deregister(Renderer::RenderOptions);
         APIDefs->Renderer.Deregister(Renderer::PostRender);
