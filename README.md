@@ -77,5 +77,13 @@ An optional Dockerimage is also provided to build the addon in a clean environme
 Docker is to run either `build-docker.sh` or `build-podman.sh` depending on your container runtime of choice. The outputs will go to the `out/` directory.
 It will contain both the release and debug build.
 
+# Credits
+This template project uses the following software and libraries:
+- Nexus API (https://github.com/RaidcoreGG)
+- Addon Builder (for Conan recipes, https://github.com/jsantorek/GW2-AddonBuilder.git)
+  - Check out the entire Addon Builder repository, it contains tools for a more sophisticated CD/CI pipeline with GitHub actions integration. 
+    The local Dockerfile this template provides is just a simple example to get you started.
+- ImGui 1.80
+
 # Final words
 Make sure to edit this README to describe your addon and its features before releasing the addon.
