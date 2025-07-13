@@ -1,0 +1,11 @@
+[requires]
+rcgg-nexus-api/v6.1
+rcgg-mumble-api/latest
+imgui/1.80
+
+[generators]
+CMakeDeps
+CMakeToolchain
+
+[layout]
+cmake_layout

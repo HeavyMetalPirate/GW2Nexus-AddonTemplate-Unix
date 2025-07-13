@@ -1,9 +1,3 @@
-[submodule "modules/nexus"]
-	path = modules/nexus
-	url = https://github.com/RaidcoreGG/RCGG-lib-nexus-api
-[submodule "modules/imgui"]
-	path = modules/imgui
-	url = https://github.com/RaidcoreGG/imgui
-[submodule "modules/mumble"]
-	path = modules/mumble
-	url = https://github.com/RaidcoreGG/RCGG-lib-mumble-api
+[submodule "modules/builder"]
+	path = modules/builder
+	url = https://github.com/jsantorek/GW2-AddonBuilder.git

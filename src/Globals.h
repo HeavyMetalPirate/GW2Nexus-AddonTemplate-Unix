@@ -6,9 +6,10 @@
 #define GLOBALS_H
 
 #include "Constants.h"
-#include "../modules/imgui/imgui.h"
-#include "../modules/nexus/Nexus.h"
-#include "../modules/mumble/Mumble.h"
+
+#include <Nexus.h>
+#include <Mumble.h>
+#include <imgui.h>
 
 #include "../resources/resources.h"
 

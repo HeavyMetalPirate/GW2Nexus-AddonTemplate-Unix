@@ -1,5 +1,11 @@
 # Build Outputs from Dockerfile
 ./out/**
+./build/**
+build
+
+# Git Submodules directory
+modules
+./modules/**
 
 # Created by https://www.toptal.com/developers/gitignore/api/clion,c++,cmake
 # Edit at https://www.toptal.com/developers/gitignore?templates=clion,c++,cmake
